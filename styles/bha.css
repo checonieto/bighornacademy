@@ -1,1 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
 
+/* Header and Navigation */
+header {
+    background-color: #264969; /* Dark Blue */
+    padding: 1em 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+}
+
+.nav li a:hover {
+    background-color: #B4CDE4; /* Lighter Blue */
+    color: #264969;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5em 1em;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+
+/* Sections */
+section {
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #264969;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Classes Page */
+.classes .class {
+    margin-bottom: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.classes .class h2 {
+    color: #505050; /* Gray */
+}
+
+/* Contact Page */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-form form label {
+    font-weight: bold;
+    color: #264969;
+}
+
+.contact-form form input,
+.contact-form form textarea,
+.contact-form form button {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+    outline: none;
+    border-color: #264969;
+    box-shadow: 0 0 5px rgba(38, 73, 105, 0.5);
+}
+
+.contact-form form button {
+    background-color: #264969;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form form button:hover {
+    background-color: #B4CDE4;
+    color: #264969;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3em 1em;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 1.5em;
+    }
+}
