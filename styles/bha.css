@@ -41,22 +41,26 @@ header {
 }
 
 /* Hero Section */
-.hero {
+hero {
     background: url('lbha.jpg') no-repeat center center/cover;
     position: relative;
     text-align: center;
     color: white;
-    padding: 5em 1em;
+    height: 400px; /* Limit section height */
+    display: flex; /* Center content */
+    align-items: center;
+    justify-content: center;
 }
-
+hero img {
+    width: 100%; /* Constrain width */
+    max-height: 400px; /* Limit height */
+    object-fit: cover; /* Preserve aspect ratio */
+}
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Enhance readability */
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
 }
 
 
