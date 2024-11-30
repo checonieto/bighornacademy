@@ -43,31 +43,22 @@ header {
 /* Hero Section */
 .hero {
     background: url('lbha.jpg') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    padding: 5em 1em;
-    .hero {
     position: relative;
-    text-align: center; /* Centers text over the image */
-    color: white; /* Adjust text color if necessary */
-}
-
-.hero img {
-    width: 100%; /* Makes the image scale to the width of the container */
-    max-height: 400px; /* Sets a maximum height for the image */
-    object-fit: cover; /* Ensures the image scales proportionally without stretching */
+    text-align: center;
+    color: white;
+    padding: 5em 1em;
 }
 
 .hero-content {
     position: absolute;
-    top: 50%; /* Positions text vertically in the center */
-    left: 50%; /* Positions text horizontally in the center */
-    transform: translate(-50%, -50%); /* Centers text exactly */
-    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background behind the text */
-    padding: 20px; /* Adds some padding around the text */
-    border-radius: 10px; /* Rounds the edges of the text background */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
-}
+
 
 .hero h1 {
      background: url('hero4.jpg') no-repeat center center/cover;
