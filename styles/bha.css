@@ -42,15 +42,17 @@ header {
 
 /* Hero Section */
 .hero {
-    background: url('logobha.jpg') no-repeat center center/cover;
+    background: url('images/lbha.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 5em 1em;
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin: 0;
+     background: url('images/hero4.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5em 1em;
 }
 
 .hero p {
