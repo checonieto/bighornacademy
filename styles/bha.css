@@ -42,7 +42,7 @@ header {
 
 /* Hero Section */
 .hero {
-    background: url('images/lbha.jpg') no-repeat center center/cover;
+    background: url('lbha.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 5em 1em;
@@ -70,7 +70,7 @@ header {
 }
 
 .hero h1 {
-     background: url('images/hero4.jpg') no-repeat center center/cover;
+     background: url('hero4.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 5em 1em;
