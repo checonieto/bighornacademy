@@ -46,14 +46,14 @@ hero {
     position: relative;
     text-align: center;
     color: white;
-    height: 400px; /* Limit section height */
+    height: 200px; /* Limit section height */
     display: flex; /* Center content */
     align-items: center;
     justify-content: center;
 }
 hero img {
     width: 100%; /* Constrain width */
-    max-height: 400px; /* Limit height */
+    max-height: 200px; /* Limit height */
     object-fit: cover; /* Preserve aspect ratio */
 }
 .hero-content {
