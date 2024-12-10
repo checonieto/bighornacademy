@@ -49,8 +49,9 @@ body {
 
 /* Carousel Styles */
 .carousel {
+   carousel {
     position: relative;
-    max-width: 800px;
+    max-width: 100%; /* Allow full-width */
     margin: 30px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -58,10 +59,9 @@ body {
 }
 
 .carousel-container {
-    border: 2px solid red;
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 300%; /* 3 slides */
+    width: 100%; /* Flex allows proper adjustment */
 }
 
 .carousel-slide {
@@ -74,6 +74,14 @@ body {
     width: 100%;
     height: auto;
     display: block;
+}
+    /* Lazy-loaded images */
+.carousel-img.lazyload {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+    .carousel-img.lazyloaded {
+    opacity: 1;
 }
 
 .carousel-text {
