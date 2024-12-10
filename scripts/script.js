@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
 
     function updateCarousel() {
-        const slideWidth = slides[0].clientWidth;
+        const slideWidth = slides[0].clientWidth;  // Ensure correct width
         container.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
     }
 
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize carousel
     updateCarousel();
 });
+
 
     // Contact Form Validation
     document.getElementById('contactForm').addEventListener('submit', (event) => {
