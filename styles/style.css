@@ -131,6 +131,12 @@ button:hover {
     object-fit: cover;
     border-radius: 10px;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-img {
+        max-height: 200px;
+    }
+}
 
 /* Buttons */
 button#prev, button#next {
