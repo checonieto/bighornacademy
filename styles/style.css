@@ -151,10 +151,15 @@ body {
 .description-text {
     flex: 1 1 300px;
 }
-
+/* Constrain the image size within its container */
+.description-image {
+    flex: 1 1 300px; /* Allow it to resize dynamically */
+    max-width: 500px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the image */
+}
 .description-image img.lazy-image {
     display: block;
-    width: auto;
+    max_width: 100%;
     Height: auto; 
     border-radius: 10px;
 }
