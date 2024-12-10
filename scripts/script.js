@@ -7,10 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.remove("active");
-            if (i === index) {
-                slide.classList.add("active");
-            }
+            currentSlide = (index + slides.length) % slides.length;
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
         });
         // Update transform property for smooth transitions
         container.style.transform = `translateX(-${index * 100}%)`;
@@ -27,8 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Add event listeners
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
+   nextButton.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+    });
+
+    prevButton.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+    });
 
     // Lazy Loading for Images
     const images = document.querySelectorAll('.carousel-img');
