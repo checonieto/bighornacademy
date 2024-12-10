@@ -1,22 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',  function () => {
     const slides = document.querySelectorAll('.carousel-slide');
     const nextButton = document.querySelector('.carousel-btn.next');
     const prevButton = document.querySelector('.carousel-btn.prev');
     let currentSlide = 0;
 
-    function updateCarousel() {
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+    function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                }
+function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
-    });
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+     // Add event listeners
+        nextButton.addEventListener("click", nextSlide);
+        prevButton.addEventListener("click", prevSlide);
 
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
+        // Automatically lazy load images when the carousel is initialized
+        slides.forEach(slide => {
+            const img = slide.querySelector(".carousel-img");
+            img.setAttribute("src", img.getAttribute("data-src"));
+        });
+
+        // Show the first slide initially
+        showSlide(currentIndex);
     });
 
 
@@ -24,29 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.querySelector('.carousel-container');
         container.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
-
-    // Next button functionality
-    nextButton.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length; // Loop back to the start
-        updateSlides();
-    });
-
-    // Previous button functionality
-    prevButton.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Loop back to the end
-        updateSlides();
-    });
-
-    // Auto-slide every 5 seconds
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlides();
-    }, 5000);
-
-    // Initialize carousel
-    updateSlides();
-});
-
 
 // Contact Form Validation
 document.getElementById('contactForm').addEventListener('submit', (event) => {
