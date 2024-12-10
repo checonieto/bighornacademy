@@ -1,59 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slides = document.querySelectorAll('.carousel-slide');
+    const container = document.querySelector('.carousel-container');
     const nextButton = document.querySelector('.carousel-btn.next');
     const prevButton = document.querySelector('.carousel-btn.prev');
-    const container = document.querySelector('.carousel-container');
     let currentSlide = 0;
 
     function showSlide(index) {
-        slides.forEach((slide, i) => {
-            currentSlide = (index + slides.length) % slides.length;
-        container.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-        });
-        // Update transform property for smooth transitions
-        container.style.transform = `translateX(-${index * 100}%)`;
+        currentSlide = (index + slides.length) % slides.length; // Wrap around the slides
+        container.style.transform = `translateX(-${currentSlide * 100}%)`; // Slide to the correct position
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+        showSlide(currentSlide + 1);
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
+        showSlide(currentSlide - 1);
     }
 
-    // Add event listeners
-   nextButton.addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-    });
+    // Button Event Listeners
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
 
-    prevButton.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-    });
-
-    // Lazy Loading for Images
-    const images = document.querySelectorAll('.carousel-img');
+    // Lazy Loading Images
     function lazyLoadImages() {
-        images.forEach((img) => {
-            if (img.dataset.src && window.innerWidth < 768) {
-                img.src = img.dataset.src; // Use mobile version
+        slides.forEach(slide => {
+            const img = slide.querySelector('.carousel-img');
+            if (img && img.dataset.src && window.innerWidth < 768) {
+                img.src = img.dataset.src; // Replace with mobile image if screen size is small
             }
         });
     }
-
     window.addEventListener('resize', lazyLoadImages);
     lazyLoadImages();
 
-    // Auto-rotate carousel
-    setInterval(() => {
-        nextSlide();
-    }, 5000); // Change every 5 seconds
+    // Auto-rotate Carousel
+    setInterval(nextSlide, 5000); // Move to the next slide every 5 seconds
 
-    // Show the first slide initially
+    // Initialize carousel
     showSlide(currentSlide);
+});
 
     // Contact Form Validation
     document.getElementById('contactForm').addEventListener('submit', (event) => {
