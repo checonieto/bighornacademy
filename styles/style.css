@@ -141,21 +141,20 @@ body {
 .description-section {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    align-items: center;
-    margin: 20px auto;
-    max:width: 1200px;
-    box_sizing: border-box;
+    padding: 20px;
+    max-width: 1200px; /* Restrict the section's maximum width */
+    margin: 0 auto; /* Center the section */
+    box-sizing: border-box;
 }
-
 .description-text {
     flex: 1 1 300px;
 }
 
 .description-image img.lazy-image {
     display: block;
-    width: 100%;
-    max-width: 400px;
+    width: auto;
     Height: auto; 
     border-radius: 10px;
 }
