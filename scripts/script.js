@@ -32,13 +32,6 @@ document.getElementById('contactForm').addEventListener('submit', (event) => {
 });
 
 
-   // Update the carousel to show the current slide
-    function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-        });
-    }
-
     // Next button click
     nextButton.addEventListener('click', () => {
         currentSlide = (currentSlide + 1) % slides.length;
