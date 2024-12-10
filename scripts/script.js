@@ -4,11 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.querySelector('.carousel-btn.prev');
     let currentSlide = 0;
 
-    // Function to update slides
-    function updateSlides() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-        });
+    function updateCarousel() {
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
 
         // Update the transform property for smooth transitions
         const container = document.querySelector('.carousel-container');
@@ -71,25 +81,6 @@ document.getElementById('contactForm').addEventListener('submit', (event) => {
     alert("Thank you for contacting us! Your message has been submitted.");
 });
 
-
-    // Next button click
-    nextButton.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
-    });
-
-    // Previous button click
-    prevButton.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateCarousel();
-    });
-
-    // Auto-rotate slides every 5 seconds
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
-    }, 5000);
-});
 
     // Lazy Loading for Images
     const images = document.querySelectorAll('.carousel-img');
