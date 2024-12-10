@@ -4,28 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Horn Academy</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
+        <h1>Big Horn Academy</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="classes.html">Classes</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="classes.html">Classes</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
+
     <main>
-        <section class="hero">
-            <h1>Empowering Students, Building Futures</h1>
-            <p>Join Big Horn Academy to develop life-changing skills.</p>
-            <button onclick="window.location.href='classes.html'">Explore Classes</button>
+        <!-- Carousel Section -->
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/testimonial1-desktop.jpg" data-src="images/testimonial1-mobile.jpg" class="carousel-img" alt="Testimonial 1" />
+                    <p>"Big Horn Academy has transformed my life. The 7 Habits course helped me focus on my goals!"</p>
+                    <span>- Maria G.</span>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/testimonial2-desktop.jpg" data-src="images/testimonial2-mobile.jpg" class="carousel-img" alt="Testimonial 2" />
+                    <p>"Thinking Errors taught me how to overcome negative thinking and improve my mindset."</p>
+                    <span>- Alex R.</span>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/testimonial3-desktop.jpg" data-src="images/testimonial3-mobile.jpg" class="carousel-img" alt="Testimonial 3" />
+                    <p>"Emotional Resilience was a game-changer for managing stress in my life."</p>
+                    <span>- Sophia T.</span>
+                </div>
+            </div>
+            <button id="prev">❮</button>
+            <button id="next">❯</button>
         </section>
     </main>
+
     <footer>
-        <p>© 2024 Big Horn Academy</p>
+        <p>© 2024 Big Horn Academy. All rights reserved.</p>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
