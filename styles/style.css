@@ -1,4 +1,21 @@
 /* General Styling */
+/* Logo styling for responsiveness */
+.logo-container {
+  text-align: center; /* Centers the logo in the header */
+  margin: 10px 0;
+}
+
+.responsive-logo {
+  max-width: 100%; /* Ensures the logo resizes to fit its container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .responsive-logo {
+    max-width: 80%; /* Adjusts size for smaller screens */
+  }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
