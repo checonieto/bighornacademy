@@ -166,4 +166,7 @@ body {
         flex-direction: column;
         text-align: center;
     }
+    .description-image img.lazy-image {
+        max-width: 100%; /* Allows the image to use full width */
+    }
 }
