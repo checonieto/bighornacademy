@@ -6,13 +6,14 @@
 }
 
 .responsive-logo {
-  max-width: 100%; /* Ensures the logo resizes to fit its container */
+  max-width: 200px; /* Restricts the logo's maximum width */
+  width: 100%; /* Ensures it scales down proportionally */
   height: auto; /* Maintains aspect ratio */
 }
 
 @media (max-width: 768px) {
   .responsive-logo {
-    max-width: 80%; /* Adjusts size for smaller screens */
+    max-width: 150px; /* Further restricts size on smaller screens */
   }
 }
 
