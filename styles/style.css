@@ -153,8 +153,8 @@ body {
 }
 /* Constrain the image size within its container */
 .description-image {
-    flex: 1 1 300px; /* Allow it to resize dynamically */
-    max-width: 500px; /* Set a maximum width for the container */
+    flex: 1 1 auto; /* Allow it to resize dynamically */
+    max-width: 100px; /* Set a maximum width for the container */
     margin: 0 auto; /* Center the image */
 }
 .description-image img.lazy-image {
