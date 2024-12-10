@@ -1,43 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const slides = document.querySelectorAll('.carousel-slide');
     const container = document.querySelector('.carousel-container');
+    const slides = document.querySelectorAll('.carousel-slide');
     const nextButton = document.querySelector('.carousel-btn.next');
     const prevButton = document.querySelector('.carousel-btn.prev');
     let currentSlide = 0;
 
+    // Show the slide based on the currentSlide index
     function showSlide(index) {
-        currentSlide = (index + slides.length) % slides.length; // Wrap around the slides
-        container.style.transform = `translateX(-${currentSlide * 100}%)`; // Slide to the correct position
+        // Ensure index wraps around
+        currentSlide = (index + slides.length) % slides.length;
+        // Translate the container to show the correct slide
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
-    function nextSlide() {
+    // Event listener for next button
+    nextButton.addEventListener('click', () => {
         showSlide(currentSlide + 1);
-    }
+    });
 
-    function prevSlide() {
+    // Event listener for previous button
+    prevButton.addEventListener('click', () => {
         showSlide(currentSlide - 1);
-    }
+    });
 
-    // Button Event Listeners
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
+    // Auto-rotate the carousel
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000); // Change every 5 seconds
 
-    // Lazy Loading Images
-    function lazyLoadImages() {
-        slides.forEach(slide => {
-            const img = slide.querySelector('.carousel-img');
-            if (img && img.dataset.src && window.innerWidth < 768) {
-                img.src = img.dataset.src; // Replace with mobile image if screen size is small
-            }
-        });
-    }
-    window.addEventListener('resize', lazyLoadImages);
-    lazyLoadImages();
-
-    // Auto-rotate Carousel
-    setInterval(nextSlide, 5000); // Move to the next slide every 5 seconds
-
-    // Initialize carousel
+    // Show the first slide initially
     showSlide(currentSlide);
 });
 
