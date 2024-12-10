@@ -1,3 +1,43 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const nextButton = document.querySelector('.carousel-btn.next');
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    let currentSlide = 0;
+
+    // Function to update slides
+    function updateSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+
+        // Update the transform property for smooth transitions
+        const container = document.querySelector('.carousel-container');
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Next button functionality
+    nextButton.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length; // Loop back to the start
+        updateSlides();
+    });
+
+    // Previous button functionality
+    prevButton.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Loop back to the end
+        updateSlides();
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlides();
+    }, 5000);
+
+    // Initialize carousel
+    updateSlides();
+});
+
+
 // Contact Form Validation
 document.getElementById('contactForm').addEventListener('submit', (event) => {
     // Get form inputs
