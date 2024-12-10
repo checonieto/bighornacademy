@@ -7,12 +7,21 @@ window.addEventListener('load', () => {
     let currentSlide = 0; // Tracks the current slide index
     const totalSlides = slides.length;
 
-    console.log(`Total slides: ${totalSlides}`); // Debugging
-
+    // Adjust carousel layout based on current slide
     function updateCarousel() {
         const slideWidth = slides[0].clientWidth;
-        console.log(`Slide width: ${slideWidth}`); // Debugging
         container.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+        // Lazy-load the current slide image
+        preloadImage(slides[currentSlide].querySelector('.carousel-img'));
+    }
+
+    // Load an image when it becomes visible
+    function preloadImage(img) {
+        if (img.dataset.src && !img.src) {
+            img.src = img.dataset.src;
+            img.classList.add('lazyloaded');
+        }
     }
 
     function showNextSlide() {
@@ -25,30 +34,20 @@ window.addEventListener('load', () => {
         updateCarousel();
     }
 
-    // Event Listeners for Buttons
-    nextButton.addEventListener('click', () => {
-        console.log('Next button clicked'); // Debugging
-        showNextSlide();
-    });
-
-    prevButton.addEventListener('click', () => {
-        console.log('Previous button clicked'); // Debugging
-        showPrevSlide();
-    });
+    // Event Listeners for navigation buttons
+    nextButton.addEventListener('click', showNextSlide);
+    prevButton.addEventListener('click', showPrevSlide);
 
     // Recalculate layout on window resize
     window.addEventListener('resize', updateCarousel);
 
-    // Preload the visible image
-    const preloadImage = (img) => {
-        const src = img.dataset.src || img.src;
-        img.src = src;
-    };
-    preloadImage(slides[currentSlide].querySelector('.carousel-img'));
-
-    // Initialize Carousel
+    // Initialize carousel
     updateCarousel();
+
+    // Preload all images initially for smoother transitions
+    slides.forEach(slide => preloadImage(slide.querySelector('.carousel-img')));
 });
+
 
 
     // Contact Form Validation
