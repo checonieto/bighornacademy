@@ -32,20 +32,31 @@ document.getElementById('contactForm').addEventListener('submit', (event) => {
 });
 
 
+   // Update the carousel to show the current slide
     function updateCarousel() {
-        const carouselContainer = document.querySelector('.carousel-container');
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
     }
 
+    // Next button click
     nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
+        currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
     });
 
+    // Previous button click
     prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateCarousel();
     });
+
+    // Auto-rotate slides every 5 seconds
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }, 5000);
+});
 
     // Lazy Loading for Images
     const images = document.querySelectorAll('.carousel-img');
