@@ -1,8 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    let currentIndex = 0;
+// Contact Form Validation
+document.getElementById('contactForm').addEventListener('submit', (event) => {
+    // Get form inputs
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validate name
+    if (name === "") {
+        alert("Please enter your name.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validate email with a regular expression
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validate message
+    if (message === "") {
+        alert("Please enter a message.");
+        event.preventDefault();
+        return;
+    }
+
+    // Success message (optional)
+    alert("Thank you for contacting us! Your message has been submitted.");
+});
+
 
     function updateCarousel() {
         const carouselContainer = document.querySelector('.carousel-container');
