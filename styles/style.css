@@ -45,22 +45,44 @@ body {
     border-radius: 10px;
 }
 
+/* Carousel Section */
+.carousel {
+    position: relative;
+    margin: 30px auto;
+    width: 90%;
+    overflow: hidden;
+    background-color: #CFCFB4; /* Pearl */
+    border-radius: 10px;
+}
+
 .carousel-container {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth transition */
-    width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide {
-    min-width: 100%; /* Each slide takes 100% of the container */
-    flex-shrink: 0;  /* Prevent slides from shrinking */
+    flex: 0 0 100%; /* Ensure each slide takes up 100% of the container width */
+    text-align: center;
+    padding: 20px;
 }
 
-.carousel-img {
+.carousel-slide img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.carousel-text {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #264969; /* Indigo Dye */
+}
+
+.carousel-author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #505033; /* Drab Dark Brown */
 }
 
 .carousel-btn {
@@ -83,6 +105,20 @@ body {
     right: 10px;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-slide img {
+        max-height: 200px;
+    }
+
+    .carousel-text {
+        font-size: 0.9rem;
+    }
+
+    .carousel-author {
+        font-size: 0.8rem;
+    }
+}
 /* Description Section */
 .description-section {
     display: flex;
