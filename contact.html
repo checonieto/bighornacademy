@@ -3,35 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Horn Academy - Contact</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="classes.html">Classes</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" aria-label="Go to Home Page">Home</a></li>
+                <li><a href="classes.html" aria-label="View our Classes Page">Classes</a></li>
+                <li><a href="contact.html" aria-label="Visit the Contact Page">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h1>Contact Us</h1>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <section>
+            <h1>Contact Us</h1>
+            <form id="contactForm" aria-label="Contact Form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" aria-required="true" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" aria-required="true" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" aria-required="true" required></textarea>
+
+                <button type="submit" aria-label="Submit the Contact Form">Submit</button>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <p>© 2024 Big Horn Academy</p>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
     </footer>
+
+    <script src="scripts/script.js" defer></script>
 </body>
 </html>
 
