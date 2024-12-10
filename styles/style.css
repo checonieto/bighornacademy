@@ -47,61 +47,66 @@ body {
     padding: 10px;
 }
 
-/* Carousel Section */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Carousel Styles */
 .carousel {
     position: relative;
+    max-width: 800px;
     margin: 30px auto;
-    width: 90%;
-    max-width: 900px;
     overflow: hidden;
-    background-color: #CFCFB4; /* Pearl */
     border-radius: 10px;
+    background-color: #CFCFB4; /* Pearl */
 }
 
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 300%; /* 3 slides */
 }
 
 .carousel-slide {
-    flex: 0 0 100%; /* Ensure each slide takes up 100% of the container width */
+    flex: 0 0 100%; /* Each slide takes full width */
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
 }
 
 .carousel-img {
     width: 100%;
     height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.carousel-text-wrapper {
-    padding: 15px;
-    background-color: white; /* White background for text */
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 5;
+    display: block;
 }
 
 .carousel-text {
+    margin-top: 10px;
     font-size: 1.1rem;
     color: #264969; /* Indigo Dye */
-    margin-bottom: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 .carousel-author {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: #505033; /* Drab Dark Brown */
+    margin-top: 5px;
+    display: block;
 }
 
+/* Buttons */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -109,9 +114,11 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    font-size: 2rem;
     cursor: pointer;
+    padding: 10px;
     z-index: 10;
+    border-radius: 50%;
 }
 
 .carousel-btn.prev {
@@ -122,12 +129,8 @@ body {
     right: 10px;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .carousel-img {
-        max-height: 200px;
-    }
-
     .carousel-text {
         font-size: 0.9rem;
     }
@@ -136,6 +139,7 @@ body {
         font-size: 0.8rem;
     }
 }
+
 
 /* Description Section */
 .description-section {
