@@ -34,73 +34,6 @@ body {
 .nav-menu a:hover {
     text-decoration: underline;
 }
-
-/* Description Section */
-.description-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.description-text {
-    flex: 1 1 300px;
-}
-
-.description-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-}
-
-/* Contact Form */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 20px auto;
-}
-
-label {
-    margin-top: 10px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #505033; /* Drab Dark Brown */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #264969; /* Indigo Dye */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .description-section {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
 /* Carousel Section */
 .carousel {
     display: flex;
@@ -158,7 +91,6 @@ button#prev {
 button#next {
     right: 10px;
 }
-
 /* Description Section */
 .description-section {
     display: flex;
@@ -176,4 +108,16 @@ button#next {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description-section {
+        flex-direction: column;
+        text-align: center;
+    }
 }
