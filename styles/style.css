@@ -39,30 +39,28 @@ body {
     position: relative;
     overflow: hidden;
     width: 90%;
-    max-width: 800px; /* Restricts size */
+    max-width: 800px; /* Restrict size */
     margin: 30px auto;
     background-color: #CFCFB4;
-    padding: 10px;
     border-radius: 10px;
 }
 
 .carousel-container {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
     width: 100%;
 }
 
 .carousel-slide {
-    min-width: 100%;
-    flex-shrink: 0; /* Ensures slides don't shrink */
-    text-align: center;
+    min-width: 100%; /* Each slide takes 100% of the container */
+    flex-shrink: 0;  /* Prevent slides from shrinking */
 }
 
 .carousel-img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .carousel-btn {
@@ -85,16 +83,6 @@ body {
     right: 10px;
 }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .carousel-img {
-        max-height: 200px;
-    }
-}
-
- 
-}
 /* Description Section */
 .description-section {
     display: flex;
