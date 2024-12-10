@@ -1,14 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        localStorage.setItem('visitorName', name);
-        alert(`Thank you for contacting us, ${name}!`);
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
     });
 
-    const storedName = localStorage.getItem('visitorName');
-    if (storedName) {
-        alert(`Welcome back, ${storedName}!`);
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    // Lazy Loading for Images
+    const images = document.querySelectorAll('.carousel-img');
+    function lazyLoadImages() {
+        images.forEach((img) => {
+            if (window.innerWidth < 768) {
+                img.src = img.dataset.src; // Use mobile version
+            }
+        });
     }
+
+    // Handle Screen Resize
+    window.addEventListener('resize', lazyLoadImages);
+    lazyLoadImages();
+
+    // Auto-rotate carousel
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    }, 5000); // Change every 5 seconds
 });
