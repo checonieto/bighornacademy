@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Home - Big Horn Academy</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,6 +19,30 @@
     </header>
 
     <main>
+        <!-- Carousel Section -->
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="images/testimonial1-desktop.jpg" data-src="images/testimonial1-mobile.jpg" alt="Testimonial 1" class="carousel-img">
+                    <p>"Big Horn Academy has transformed my life. The 7 Habits course helped me focus on my goals!"</p>
+                    <span>- Maria G.</span>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/testimonial2-desktop.jpg" data-src="images/testimonial2-mobile.jpg" alt="Testimonial 2" class="carousel-img">
+                    <p>"Thinking Errors taught me how to overcome negative thinking and improve my mindset."</p>
+                    <span>- Alex R.</span>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/testimonial3-desktop.jpg" data-src="images/testimonial3-mobile.jpg" alt="Testimonial 3" class="carousel-img">
+                    <p>"Emotional Resilience was a game-changer for managing stress in my life."</p>
+                    <span>- Sophia T.</span>
+                </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
+        </section>
+
+        <!-- School Description Section -->
         <section class="description-section">
             <div class="description-text">
                 <h1>Welcome to Big Horn Academy</h1>
@@ -27,24 +52,8 @@
                 </p>
             </div>
             <div class="description-image">
-                <img src="images/academy.jpg" alt="Big Horn Academy students working together" />
+                <img src="images/logotablet.jpg" data-src="images/academy.jpg" alt="Big Horn Academy students working together" class="lazy-image" loading="lazy">
             </div>
-        </section>
-
-        <section>
-            <h2>Contact Us</h2>
-            <form id="contactForm" aria-label="Contact Form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" aria-required="true" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" aria-required="true" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" aria-required="true" required></textarea>
-
-                <button type="submit" aria-label="Submit the Contact Form">Submit</button>
-            </form>
         </section>
     </main>
 
@@ -52,6 +61,6 @@
         <p>&copy; 2024 Big Horn Academy. All rights reserved.</p>
     </footer>
 
-    <script src="scripts/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 </body>
 </html>
