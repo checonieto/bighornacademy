@@ -34,15 +34,17 @@ body {
 .nav-menu a:hover {
     text-decoration: underline;
 }
-/* Carousel Section */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 90%;
-    max-width: 800px; /* Restrict size */
-    margin: 30px auto;
-    background-color: #CFCFB4;
-    border-radius: 10px;
+/* Reset and Base Styling */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 10px;
 }
 
 /* Carousel Section */
@@ -50,6 +52,7 @@ body {
     position: relative;
     margin: 30px auto;
     width: 90%;
+    max-width: 900px;
     overflow: hidden;
     background-color: #CFCFB4; /* Pearl */
     border-radius: 10px;
@@ -63,20 +66,34 @@ body {
 .carousel-slide {
     flex: 0 0 100%; /* Ensure each slide takes up 100% of the container width */
     text-align: center;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.carousel-slide img {
+.carousel-img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
 }
 
+.carousel-text-wrapper {
+    padding: 15px;
+    background-color: white; /* White background for text */
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+
 .carousel-text {
-    margin: 15px 0;
     font-size: 1.1rem;
     color: #264969; /* Indigo Dye */
+    margin-bottom: 10px;
 }
 
 .carousel-author {
@@ -107,7 +124,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .carousel-slide img {
+    .carousel-img {
         max-height: 200px;
     }
 
@@ -119,6 +136,7 @@ body {
         font-size: 0.8rem;
     }
 }
+
 /* Description Section */
 .description-section {
     display: flex;
