@@ -162,6 +162,7 @@ body {
     max_width: 100%;
     Height: auto; 
     border-radius: 10px;
+    object-fit: contain;
 }
 /* Responsive Design */
 @media (max-width: 768px) {
