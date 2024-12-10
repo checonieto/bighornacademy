@@ -1,35 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.carousel-container');
+document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.carousel-slide');
+    const container = document.querySelector('.carousel-container');
     const nextButton = document.querySelector('.carousel-btn.next');
     const prevButton = document.querySelector('.carousel-btn.prev');
+
     let currentSlide = 0;
 
-    // Show the slide based on the currentSlide index
-    function showSlide(index) {
-        // Ensure index wraps around
-        currentSlide = (index + slides.length) % slides.length;
-        // Translate the container to show the correct slide
-        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+    function updateCarousel() {
+        const slideWidth = slides[0].clientWidth;
+        container.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
     }
 
-    // Event listener for next button
-    nextButton.addEventListener('click', () => {
-        showSlide(currentSlide + 1);
-    });
+    function showNextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }
 
-    // Event listener for previous button
-    prevButton.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
-    });
+    function showPrevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
 
-    // Auto-rotate the carousel
-    setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000); // Change every 5 seconds
+    // Attach event listeners
+    nextButton.addEventListener('click', showNextSlide);
+    prevButton.addEventListener('click', showPrevSlide);
 
-    // Show the first slide initially
-    showSlide(currentSlide);
+    // Recalculate slide position on window resize
+    window.addEventListener('resize', updateCarousel);
+
+    // Initialize carousel
+    updateCarousel();
 });
 
     // Contact Form Validation
