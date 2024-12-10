@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const slides = document.querySelectorAll('.carousel-slide');
     const container = document.querySelector('.carousel-container');
     const nextButton = document.querySelector('.carousel-btn.next');
@@ -7,8 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0; // Tracks the current slide index
     const totalSlides = slides.length;
 
+    console.log(`Total slides: ${totalSlides}`); // Debugging
+
     function updateCarousel() {
         const slideWidth = slides[0].clientWidth;
+        console.log(`Slide width: ${slideWidth}`); // Debugging
         container.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
     }
 
@@ -23,15 +26,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event Listeners for Buttons
-    nextButton.addEventListener('click', showNextSlide);
-    prevButton.addEventListener('click', showPrevSlide);
+    nextButton.addEventListener('click', () => {
+        console.log('Next button clicked'); // Debugging
+        showNextSlide();
+    });
+
+    prevButton.addEventListener('click', () => {
+        console.log('Previous button clicked'); // Debugging
+        showPrevSlide();
+    });
 
     // Recalculate layout on window resize
     window.addEventListener('resize', updateCarousel);
 
+    // Preload the visible image
+    const preloadImage = (img) => {
+        const src = img.dataset.src || img.src;
+        img.src = src;
+    };
+    preloadImage(slides[currentSlide].querySelector('.carousel-img'));
+
     // Initialize Carousel
     updateCarousel();
 });
+
 
     // Contact Form Validation
     document.getElementById('contactForm').addEventListener('submit', (event) => {
