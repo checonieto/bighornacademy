@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Big Horn Academy</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js" defer></script>
+    <meta name="description" content="Big Horn Academy: Shaping resilient and effective individuals through innovative learning.">
+    <title>Big Horn Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
+        <h1>Welcome to Big Horn Academy</h1>
         <nav>
-            <ul class="nav-menu">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="classes.html">Classes</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -19,76 +21,41 @@
     </header>
 
     <main>
-        <!-- Carousel Section -->
-<section class="carousel">
-    <!-- Previous Button -->
-    <button class="carousel-btn prev">❮</button>
+        <section id="about">
+            <h2>About Us</h2>
+            <img src="images/academy.jpg" alt="Big Horn Academy" loading="lazy">
+            <p>Big Horn Academy is committed to helping students become resilient, effective, and prepared for life’s challenges. We blend modern techniques with core principles to foster growth and success.</p>
+        </section>
 
-    <!-- Carousel Container -->
-    <div class="carousel-container">
-        <!-- Slide 1 -->
-        <div class="carousel-slide">
-            <img 
-                src="images/testimonial1-desktop.jpg" 
-                data-src="images/testimonial1-mobile.jpg" 
-                class="carousel-img" 
-                alt="Testimonial 1" 
-            />
-            <p class="carousel-text">"Big Horn Academy has transformed my life. The 7 Habits course helped me focus on my goals!"</p>
-            <span class="carousel-author">- Maria G.</span>
-        </div>
+        <section id="carousel">
+            <h2>Testimonials</h2>
+            <div class="carousel">
+                <div class="slide" id="slide-1">
+                    <img src="images/student1.jpg" alt="Jane D." loading="lazy">
+                    <p>"Big Horn Academy transformed my life!" - Jane D.</p>
+                </div>
+                <div class="slide" id="slide-2">
+                    <img src="images/student2.jpg" alt="Mike T." loading="lazy">
+                    <p>"I learned resilience and confidence." - Mike T.</p>
+                </div>
+                <div class="slide" id="slide-3">
+                    <img src="images/student3.jpg" alt="Emily R." loading="lazy">
+                    <p>"The best decision I made for my education." - Emily R.</p>
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+        
 
-        <!-- Slide 2 -->
-        <div class="carousel-slide">
-            <img 
-                src="images/slide2.jpg" 
-                data-src="images/testimonial2-mobile.jpg" 
-                class="carousel-img" 
-                alt="Testimonial 2" 
-            />
-            <p class="carousel-text">"Thinking Errors taught me how to overcome negative thinking and improve my mindset."</p>
-            <span class="carousel-author">- Alex R.</span>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-slide">
-            <img 
-                src="images/testimonial3-desktop.jpg" 
-                data-src="images/testimonial3-mobile.jpg" 
-                class="carousel-img" 
-                alt="Testimonial 3" 
-            />
-            <p class="carousel-text">"Emotional Resilience was a game-changer for managing stress in my life."</p>
-            <span class="carousel-author">- Sophia T.</span>
-        </div>
-    </div>
-
-    <!-- Next Button -->
-    <button class="carousel-btn next">❯</button>
-</section>
-
-
-
-        <!-- Description Section -->
-<section class="description-section">
-    <div class="description-text">
-        <h1>Welcome to Big Horn Academy</h1>
-        <p>
-            Big Horn Academy offers three classes for teenagers and young adults.
-            BHA aims to provide its students life planning skills, self-esteem, and emotional resilience.
-        </p>
-    </div>
-    <div class="description-image">
-        <img src="images/academy.jpg" alt="Big Horn Academy students working together" class="lazy-image" loading="lazy">
-    </div>
-</section>
-
+        <section id="stats">
+            <h2>Our Impact</h2>
+            <p>We have reached <span id="student-count">0</span> students and counting!</p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Big Horn Academy. All rights reserved.</p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 </body>
 </html>
